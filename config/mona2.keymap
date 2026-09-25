@@ -58,6 +58,8 @@
 &lt {
     quick-tap-ms = <200>;
     flavor = "balanced";
+    tapping-term-ms = <280>;
+    require-prior-idle-ms = <150>;
 };
 
 &msc {
