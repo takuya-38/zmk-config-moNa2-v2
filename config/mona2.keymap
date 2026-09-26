@@ -186,19 +186,6 @@
             tapping-term-ms = <200>;
         };
 
-        // Ctrl+Space を素早く押すと Space より先に A を離すことがあり、
-        // balanced では a と空白になるため、A の Ctrl だけ hold-preferred にする
-        mt_ctrl: mt_ctrl {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MT_CTRL";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            require-prior-idle-ms = <150>;
-        };
-
         // エンコーダ用 runtime-configurable sensor rotate
         // デフォルトはスクロール (cw=SCRL_DOWN, ccw=SCRL_UP)
         // DYA Studio Web UI から レイヤーごとに cw/ccw の binding を
@@ -265,7 +252,7 @@
             display-name = "MAC";
             bindings = <
 &kp TAB                     &kp W                       &kp E                       &kp R                       &kp T                       &kp Y                       &kp U                       &kp I                       &kp O                       &kp P
-&mt_ctrl LEFT_CONTROL A     &lt 2 S                    &kp D                       &kp F                       &kp G                       &kp SEMICOLON               &kp H                       &kp J                       &lt 7 K                     &kp L                       &kp MINUS
+&mt LEFT_CONTROL A          &lt 2 S                     &kp D                       &kp F                       &kp G                       &kp SEMICOLON               &kp H                       &kp J                       &lt 7 K                     &kp L                       &kp MINUS
 &mt LEFT_SHIFT Z            &kp X                       &kp C                       &kp V                       &kp B                       &kp BACKSPACE               &kp SQT                     &kp N                       &kp M                       &kp COMMA                   &kp PERIOD                  &mt RIGHT_SHIFT SLASH
 &kp Q                       &none                       &kp GRAVE                   &mt LEFT_ALT ESCAPE         &mt LEFT_GUI SPACE          &mt LA(LC(LEFT_GUI)) LANG2  &kp LANG1                   &kp RETURN                  &kp BACKSLASH
             >;
